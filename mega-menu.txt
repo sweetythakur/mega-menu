@@ -1,0 +1,319 @@
+==========mega-menu-=====snippet=================
+<div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+  <div class="header-tab">
+    <div class="menu-tab seeting-tab">
+      <div class="togl tab-div">
+        <ul class="list-menu list-menu--inline parant_nav navbar-nav mr-auto site-nav list--inline" id="SiteNav" role="list">
+          {%- for link in section.settings.menu.links -%}
+          <li class="li-liste nav-item main--menu">
+            <a  class="header__menu-item header__menu-item list-menu__item link link--text focus-inset nav-link site-nav__link site-nav__link--main" href="{{ link.url }}" n_handle="{{ link.title | handle }}">{{ link.title | escape }}</a>                   
+
+            {%comment %}
+            {%- assign main_menuname = link.title | downcase -%}
+            <div class="grid mega_menu {{main_menuname}}">
+              {%- for block in section.blocks -%}
+              {%- assign add_menuname1 = block.settings.menu_main | downcase -%}
+              {%- if main_menuname == add_menuname1 -%}
+              <div class="grid__item medium-up--one-third">
+                <ul class="mega-menu-ul">
+                  <p>{{ block.settings.main_menu1 }}</p>
+                  {% for link in linklists[block.settings.main_menu1].links %}  
+                  <li class="mega-menu-li">
+                    <a href="{{ link.url }}">{{ link.title | escape }}</a>
+                  </li>    
+                  {% endfor %}
+                </ul>
+              </div>
+              <div class="grid__item medium-up--one-third">
+                <ul class="mega-menu-ul">
+                  <p>{{ block.settings.main_menu2 }}</p>
+                  {% for link in linklists[block.settings.main_menu2].links %}  
+                  <li class="mega-menu-li">
+                    <a href="{{ link.url }}">{{ link.title | escape }}</a>
+                  </li>    
+                  {% endfor %}
+                </ul>
+              </div>
+              {% endif %}
+
+              {%endfor%}
+            </div>
+            {%endcomment%}     
+           </li>
+          {% endfor %}
+        </ul>
+      </div>
+<!--  -->
+      <div class="grid grid--uniform">    
+        <div class="main_div">  
+          <div class="inner_mega_menu">
+            {%- for link in section.settings.menu.links -%}
+            <div class="mega-menu-custom" nav="{{ link.title | handle }}">
+             <div class="custom_mega_menu">
+              <div class="grid menu_div">
+                {%- assign main_menuname = link.title | downcase -%}
+                {%- for block in section.blocks -%}
+                {%- assign add_menuname1 = block.settings.menu_main | downcase -%}
+                {%- if main_menuname == add_menuname1 -%}
+                {% if block.settings.main_menu1 != blank%}
+                <div class="grid__item medium-up--one-third">
+                  <ul class="mega-menu-ul">
+                    <h3>{{ block.settings.main_menu1 }}</h3>
+                    {% for link in linklists[block.settings.main_menu1].links %}  
+                    <li class="mega-menu-li">
+                      <a href="{{ link.url }}">{{ link.title | escape }}</a>
+                    </li>    
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endif%}
+                {% if block.settings.main_menu2 != blank%}
+                <div class="grid__item medium-up--one-third">
+                  <ul class="mega-menu-ul">
+                    <h3>{{ block.settings.main_menu2 }}</h3>
+                    {% for link in linklists[block.settings.main_menu2].links %}  
+                    <li class="mega-menu-li">
+                      <a href="{{ link.url }}">{{ link.title | escape }}</a>
+                    </li>    
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endif %}
+                 {% if block.settings.main_menu3 != blank%}
+                <div class="grid__item medium-up--one-third">
+                  <ul class="mega-menu-ul">
+                    <h3>{{ block.settings.main_menu3 }}</h3>
+                    {% for link in linklists[block.settings.main_menu3].links %}  
+                    <li class="mega-menu-li">
+                      <a href="{{ link.url }}">{{ link.title | escape }}</a>
+                    </li>    
+                    {% endfor %}
+                  </ul>
+                </div>
+                {%endif%}
+                {% if block.settings.main_menu4 != blank%}
+                <div class="grid__item medium-up--one-third">
+                  <ul class="mega-menu-ul">
+                    <h3>{{ block.settings.main_menu4 }}</h3>
+                    {% for link in linklists[block.settings.main_menu4].links %}  
+                    <li class="mega-menu-li">
+                      <a href="{{ link.url }}">{{ link.title | escape }}</a>
+                    </li>    
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endif %}
+                {% if block.settings.main_menu5 != blank%}
+                <div class="grid__item medium-up--one-third">
+                  <ul class="mega-menu-ul">
+                    <h3>{{ block.settings.main_menu5 }}</h3>
+                    {% for link in linklists[block.settings.main_menu5].links %}  
+                    <li class="mega-menu-li">
+                      <a href="{{ link.url }}">{{ link.title | escape }}</a>
+                    </li>    
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endif%}
+                {% if block.settings.main_menu6 != blank%}
+                <div class="grid__item medium-up--one-third">
+                  <ul class="mega-menu-ul">
+                    <h3>{{ block.settings.main_menu6 }}</h3>
+                    {% for link in linklists[block.settings.main_menu6].links %}  
+                    <li class="mega-menu-li">
+                      <a href="{{ link.url }}">{{ link.title | escape }}</a>
+                    </li>    
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endif%}
+                {% if block.settings.main_menu7 != blank%}
+                <div class="grid__item medium-up--one-third">
+                  <ul class="mega-menu-ul">
+                    <h3>{{ block.settings.main_menu7 }}</h3>
+                    {% for link in linklists[block.settings.main_menu7].links %}  
+                    <li class="mega-menu-li">
+                      <a href="{{ link.url }}">{{ link.title | escape }}</a>
+                    </li>    
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endif%}
+                {% if block.settings.main_menu8 != blank%}
+                <div class="grid__item medium-up--one-third">
+                  <ul class="mega-menu-ul">
+                    <h3>{{ block.settings.main_menu8 }}</h3>
+                    {% for link in linklists[block.settings.main_menu8].links %}  
+                    <li class="mega-menu-li">
+                      <a href="{{ link.url }}">{{ link.title | escape }}</a>
+                    </li>    
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endif%}
+                
+                {%- endif -%}
+          
+                {%- endfor -%}
+              </div>
+               <!--image mega_menu  -->
+               {%- for block in section.blocks -%}
+               {%- for link in section.settings.menu.links -%}
+               {%- assign add_menuname1 = block.settings.menu_main | downcase -%}
+               {% assign index_loop = forloop.index%}
+               {%- if main_menuname == add_menuname1 -%}
+               {% if block.settings.main_menuimg != blank and index_loop == 1%}
+               <div class="image_menu {{main_menuname}}">
+                 <img src="{{ block.settings.main_menuimg | img_url: 'original' }}"  class="slide_img">
+               </div>
+               {% endif%}
+               {% endif%}
+               {% endfor %}
+               {% endfor %}
+               <!-- image code -->
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+        </div>
+<!--  -->
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function(){ 
+    $(".main_div").mouseleave(function() {
+      $(".mega-menu-custom").hide();
+    });
+    $("li.li-liste.nav-item.main--menu a").hover(function(){
+      var get_nav = $(this).attr('n_handle');
+      $(".mega-menu-custom").hide();   
+      $(".mega-menu-custom[nav='"+get_nav+"']").show();
+      //console.log(get_nav);
+    });
+  });
+</script>
+
+
+
+=============header========
+,
+ "blocks": [
+{
+"type": "main-menu",
+"name": "Mega-Menu",
+"settings": [
+{
+"type": "text",
+"id": "menu_main",
+"label": "Main Menu Name"
+},
+{
+"type": "link_list",
+"id": "main_menu1",
+"label": "Add Menu 1"
+},
+{
+"type": "link_list",
+"id": "main_menu2",
+"label": "Add Menu 2"
+},
+{
+"type": "link_list",
+"id": "main_menu3",
+"label": "Add Menu 3"
+},
+{
+"type": "link_list",
+"id": "main_menu4",
+"label": "Add Menu 4"
+},
+{
+"type": "link_list",
+"id": "main_menu5",
+"label": "Add Menu 5"
+},
+{
+"type": "link_list",
+"id": "main_menu6",
+"label": "Add Menu 6"
+},
+{
+"type": "link_list",
+"id": "main_menu7",
+"label": "Add Menu 7"
+},
+{
+"type": "link_list",
+"id": "main_menu8",
+"label": "Add Menu 8"
+},
+{
+"type": "image_picker",
+"id": "main_menuimg",
+"label": "Add Image"
+}
+]
+}
+]
+
+
+
+
+=====================
+.mega-menu-custom{
+  display:none;
+}
+ul.mega-menu-ul li {
+    list-style: none;
+}
+
+.menu_div {    background: #fff;    width: 100%;}
+
+.mega-menu-ul h3 {
+    text-transform: uppercase;
+    letter-spacing: 0;
+    font-size: 16px;
+}
+li.mega-menu-li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #4e4d4d !important;
+    text-decoration: none;
+}
+
+.mega-menu-custom {
+   z-index:1;
+}
+.inner_mega_menu {
+/     position: relative; /
+    background: #fff !important;
+}
+.image_menu img {
+    width: 100%;
+}
+.mega-menu-custom {
+    position: relative;
+}
+.menu_div {
+    width: 100%;
+    min-width: 800px;
+    height: 100%;
+}
+.image_menu {
+    width: 40%;
+    background: #fff;
+    height:100%;
+}
+.custom_mega_menu {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    width: 100%;
+    position: absolute;
+    background: #fff;
+}
+
+.image_menu img {
+    width: 100%;
+}
