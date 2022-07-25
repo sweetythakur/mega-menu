@@ -1,0 +1,10 @@
+
+set thumnail click function
+================
+$('.thumbnail-list__item').click(function(){
+
+  var parent_slide = $(this).parents('.slick-slide');
+  var data_index = parent_slide.attr('data-slick-index');
+
+  $('.single-item').slick('slickGoTo', data_index);
+})
